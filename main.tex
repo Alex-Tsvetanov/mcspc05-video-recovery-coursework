@@ -1,0 +1,96 @@
+% ============================================================================
+% Курсова работа, ОКС „Магистър“, ТУ София
+% Дисциплина: MCSPC05 Видео и аудио анализ в криминалистиката (семестър I)
+% Програма:   Киберсигурност и превенция на киберпрестъпността (MCSPC)
+%
+% Тема: Възстановяване на изтрити и повредени видеофайлове при криминалистична
+%       експертиза: структура на MP4 и H.264, методи и доказателствена стойност.
+%
+% Компилация:  latexmk -pdf main.tex        (pdfLaTeX, НЕ XeLaTeX)
+% Форматиране: preamble.tex (форматът на ФКСТ, взет от Waypoint)
+% Незапълнените места са маркирани с \TODO{...}:
+%     grep -rn 'TODO' chapters/ main.tex
+% ============================================================================
+\documentclass[12pt]{article}
+
+\input{preamble}
+
+\begin{document}
+
+% ============================================================================
+% Заглавна страница
+% ============================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+    {\fontsize{18}{21.6}\selectfont\bfseries ТЕХНИЧЕСКИ УНИВЕРСИТЕТ, СОФИЯ\par}
+    \vspace{0.5cm}
+    {\fontsize{16}{19.2}\selectfont\bfseries ФАКУЛТЕТ „КОМПЮТЪРНИ СИСТЕМИ И ТЕХНОЛОГИИ“\par}
+
+    \vspace{0.3cm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.30\linewidth]{images/tu-logo.png}
+    \end{figure}
+    \vspace{0.2cm}
+
+    {\fontsize{20}{23}\selectfont\bfseries ВЪЗСТАНОВЯВАНЕ НА ИЗТРИТИ И ПОВРЕДЕНИ ВИДЕОФАЙЛОВЕ ПРИ КРИМИНАЛИСТИЧНА ЕКСПЕРТИЗА\par}
+
+    \vspace{0.6cm}
+
+    {\fontsize{14}{16.8}\selectfont\bfseries КУРСОВА РАБОТА\par}
+    \vspace{0.3cm}
+    {\fontsize{14}{16.8}\selectfont\bfseries по дисциплина „Видео и аудио анализ в криминалистиката“\par}
+
+    \vfill
+
+    \begin{flushleft}
+    \begin{tabular}{@{}l@{\hspace{0.6em}}l@{}}
+    Студент: & Алекс Иванов Цветанов\\
+    Група: & 263\\
+    Фак. №: & \TODO{фак. номер}\\
+    \end{tabular}
+
+    \vspace{0.7cm}
+
+    % Дисциплината се води от трима преподаватели. Кой е поставил заданието,
+    % още не е записано. Да се впише само той.
+    {\fontsize{14}{16.8}\selectfont\bfseries Преподавател:\par}
+    \TODO{име на преподавателя}\par
+    \end{flushleft}
+
+    \vfill
+
+    {\fontsize{12}{14.4}\selectfont София, 2026\par}
+\end{center}
+\end{titlepage}
+
+% ============================================================================
+% Съдържание
+% ============================================================================
+\newpage
+\pagestyle{empty}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+\input{chapters/00_introduction.tex}
+\input{chapters/01_container_and_codec.tex}
+\input{chapters/02_causes.tex}
+\input{chapters/03_methods.tex}
+\input{chapters/04_procedure.tex}
+\input{chapters/05_conclusion.tex}
+
+% ============================================================================
+% Литература
+% ============================================================================
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{ЛИТЕРАТУРА}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\end{document}
