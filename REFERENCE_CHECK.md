@@ -1,32 +1,42 @@
 # Reference check, 9 Nov 2026
 
-What each source is cited for, and how far it was checked. "Index" means the
-bibliographic record was confirmed by web search on 9 Nov 2026 but the full text was not
-read. "Standard" means the claim is basic structure that the standard defines; the
-standard itself was not opened in this session. Nothing marked "not opened" should be
-trusted further than that.
+Every source was looked up again on 9 Nov 2026, this time in the primary text where it
+could be reached. Each row says what was actually read.
+
+## Read in full
+
+| Key | Cited for | Verdict and location |
+|---|---|---|
+| `itu_h264` | NAL header 1 + 2 + 5 bits, `forbidden_zero_bit` = 0; types 1, 5, 6, 7, 8; Annex B start code `0x000001`; IDR; PPS refers to SPS; SPS holds profile and frame size | Confirmed in the 08/2021 and 06/2026 editions (itu.int PDFs). Clauses 7.3.1, 7.4.1, Table 7-1, 3.69 (IDR), Annex B.1, 7.4.2.2, 7.3.2.1.1. The two editions agree on all of these. Cited as 2026, the edition in force. |
+| `wiegand2003` | I, P, B frames; inter prediction from decoded pictures; NAL units; IDR | Confirmed, pp. 562, 564, 566. TCSVT 13(7):560 to 576, July 2003. |
+| `nist80086` | Deleted file: pointer marked deleted, data stays until overwritten (§4.1.3); four phases (§3); work only on the copy (p. 3-4, §4.2); message digests to verify integrity (p. 3-4, 4-8); chain of custody | Confirmed. August 2006. Now also carries the deletion claim and the chain of custody claim. |
+| `garfinkel2007` | Carvers assume contiguity; fragmentation statistics; fast object validation; bifragment gap carving | Confirmed (Introduction S3, §3.2 Table 1, §4.1, §5.2.1). **Corrected:** the text said fragmentation is "not rare". Garfinkel reports about 6% of files fragmented over 300+ drives, half the drives with none, 30 drives above 10%, and calls it "relatively rare" while still treating fragment carving as necessary. The text now says exactly that. |
+| `richard2005scalpel` | Header/footer carver driven by a configuration file, efficient scanning | Confirmed, §2.1.2. DFRWS 2005, pp. 71 to 77. Conference city not confirmed, so it was removed. |
+| `bell2010` | SSD garbage collection erases freed data without a host command; quick-formatted HDD kept all data; quick-formatted SSD wiped itself in about three minutes | Confirmed, abstract and pp. 7 to 10. JDFSL 5(3):1 to 20, 2010. |
+
+## Abstract or record only
+
+| Key | Cited for | Verdict |
+|---|---|---|
+| `na2014` | Frame-based recovery using codec specifications; most content in non-overwritten segments recovered | Confirmed from the verbatim abstract (Europe PMC). IEEE TIP 23(2):517 to 526, 2014. Full text paywalled. |
+| `pal2009` | Carving as recovery without file system metadata; history of carving | Confirmed from the abstract. **Removed:** the claim that the paper covers more than two fragments, which the abstract does not show. |
+| `untrunc` | Needs a working file from the same camera or app; restores truncated mp4/mov; "some luck" needed | Confirmed from the README. **Corrected:** the README does not describe how it works, so the text no longer says what untrunc does internally. It now explains, from the format alone, why a reference file is needed. |
+
+## Not readable without an ISO account or purchase
 
 | Key | Cited for | Status |
 |---|---|---|
-| `iso14496_12` | Box header (4 byte size, 4 char type, size 1 and size 0 cases); `ftyp`, `moov`, `mdat`; `stbl` tables `stsz`, `stco`/`co64`, `stsc`, `stss`, `stsd`; movie fragments `moof`; frame timing from `moov` tables | Standard, not opened. Edition year 2022 to confirm. |
-| `iso14496_14` | MP4 as a profile of ISOBMFF | Standard, not opened. Edition year 2020 to confirm. |
-| `iso14496_15` | Length prefixed NAL units in MP4, no start codes; `avcC` holds SPS, PPS and the length field size | Standard, not opened. Edition year 2022 to confirm. |
-| `itu_h264` | NAL header bit layout (1 + 2 + 5 bits); NAL types 1, 5, 6, 7, 8; Annex B start code `00 00 01`; IDR definition | Standard, not opened. Edition year 2021 to confirm. |
-| `wiegand2003` | I, P, B frames and inter frame dependency | Not opened. Bibliographic data from memory: IEEE TCSVT 13(7), 560 to 576, 2003. |
-| `carrier2005` | Deletion marks entries free and leaves data; quick format leaves the data area; file system fragmentation | Not opened. Book, Addison-Wesley 2005. |
-| `richard2005scalpel` | Scalpel as a signature based carver with a configuration file | Not opened. DFRWS 2005. |
-| `garfinkel2007` | Carving assumes contiguity; fragmentation on used drives is not rare; fast object validation; bifragment gap carving | Index. Digital Investigation 4S, S2 to S12, 2007 (DFRWS 2007). DTIC hosts a PDF. **No fragmentation percentage is quoted in the text**: secondary sources disagree on the figures. |
-| `pal2009` | Definition of file carving; extension past two fragments | Index. IEEE SPM 26(2), 59 to 71, 2009, DOI 10.1109/MSP.2008.931081. |
-| `na2014` | Frame based recovery using codec specifications; recovers most non overwritten content, not overwritten segments | Index. IEEE TIP 23(2), 517 to 526, Feb 2014, DOI 10.1109/TIP.2013.2285625. Volume, issue and pages confirmed by search on 9 Nov 2026. |
-| `untrunc` | Needs a working reference file from the same device; rebuilds the index of a truncated mp4/mov; success not guaranteed | Repository README summary via web search, 9 Nov 2026. |
-| `bell2010` | SSD garbage collection can erase freed blocks without a host command, so deleted data may be gone | Index. JDFSL 5(3), article 1, 2010, Murdoch University. Pages not given in the bib entry. Full text not read. |
-| `iso27037` | Guidelines for identification, collection, acquisition, preservation; working copy; chain of custody | Standard, not opened. |
-| `nist80086` | Four phases (collection, examination, analysis, reporting); hashing to show integrity | Not opened. NIST SP 800-86, 2006. |
+| `iso14496_12` | Box header, size 1 and size 0; `ftyp`, `moov`, `mdat`; `stbl` tables; `moof`; timing from `moov` | **Not verified against the standard.** ISO's free-standards page is closed; ISO/IEC 14496-12:2026 (edition 8, the one in force) is listed at CHF 0 but needs an ISO account to download. 2022 edition withdrawn. The `ftyp` wording was softened to "as early as possible" and the byte 4 to 7 signature made conditional on `ftyp` being first. |
+| `iso14496_14` | MP4 is a specialisation of ISOBMFF | Not verified. 2020 edition confirmed in force from the ISO catalogue. |
+| `iso14496_15` | Length-prefixed NAL units; `avcC` holds SPS, PPS, length size | Not verified. 2024 edition in force; 2022 withdrawn. |
+| `iso27037` | Scope: identification, collection, acquisition, preservation | Only the title and scope confirmed from the ISO catalogue. The working copy and chain of custody claims are now cited to NIST SP 800-86 instead. |
 
-## Not cited
+## Removed
 
-The course lectures (Lecture Audio 3 and 4, the 2025 lecture archive, the Biometric
-technologies archive) were not read for this work. Lab 3 (speaker identification) was
-read and is about audio, so it is not cited either. If the lecturer expects the course
-material to be cited, the video lectures inside `Lectures Ciber SP 07 01 2025.zip` are
-the place to look.
+- `carrier2005` (*File System Forensic Analysis*). No legal preview could be read. Its
+  claims are now cited to NIST SP 800-86, Bell and Boddington, and Garfinkel, which were
+  read.
+
+## Course material
+
+Not cited. The lectures were not read; Lab 3 is about audio.

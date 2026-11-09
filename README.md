@@ -23,7 +23,7 @@ Title: *Възстановяване на изтрити и повредени �
 | `main.tex` | Skeleton: title page, contents, chapter order, bibliography. |
 | `chapters/` | The text. `00` introduction, `01` MP4 and H.264 structure, `02` causes of loss, `03` recovery methods, `04` procedure and evidential value, `05` conclusion. |
 | `preamble.tex` | ФКСТ format, copied from `waypoint-communication-networks/docs/preamble.tex` with the Waypoint-only macros removed. |
-| `references.bib` | 14 sources. |
+| `references.bib` | 13 sources. |
 | `REFERENCE_CHECK.md` | Status of every reference. |
 | `images/tu-logo.png` | Title page logo, from Waypoint. |
 
@@ -39,11 +39,13 @@ empty bibliography.
 
 ## Open before handing in
 
-- `\TODO{фак. номер}` on the title page. MCSPC05 is an MCSPC subject, so it would be the
-  КСиг number. Whether to print it is Alex's call.
-- `\TODO{име на преподавателя}`. Three lecturers share the subject (Проф. Плешкова,
-  Доц. Манолова, гл. ас. Нешов). Only the one who set the work goes here.
 - The length rule and deadline, once the lecturer states them.
+- The ISO/IEC 14496 claims in section I are not yet checked against the standards'
+  text. ISO/IEC 14496-12:2026 is free from the ISO webstore but needs an ISO account.
+  See `REFERENCE_CHECK.md`.
+
+The title page names Доц. д-р Агата Манолова, who teaches the video half of the subject
+(Проф. Плешкова teaches audio).
 
 ## Notes on the format
 
